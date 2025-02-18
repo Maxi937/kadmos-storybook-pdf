@@ -1,4 +1,5 @@
 import { useEffect, useGlobals } from "storybook/internal/preview-api";
+
 import ReactDOMServer from "react-dom/server"
 import type {
   Renderer,
@@ -40,7 +41,7 @@ async function addPdfContentToStory(html: String, canvas: ParentNode) {
     const response = await fetch("/pdf", {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({html: html}),
-      method: "POST",
+      method: "POST"
     })
 
     const pdfBlob = await response.blob()
@@ -72,7 +73,7 @@ async function clearPdf(canvas: ParentNode) {
       "style",
       `
       display: block;
-    `,)
+    `)
   }
 }
 

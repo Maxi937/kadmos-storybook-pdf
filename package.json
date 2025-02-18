@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "description": "render pdf",
   "keywords": [
-    "storybook-addons",
     "storybook-addons"
   ],
   "repository": {
@@ -24,10 +23,12 @@
       "import": "./dist/preview.js",
       "require": "./dist/preview.cjs"
     },
-    "./preset": "./dist/preset.cjs",
     "./manager": "./dist/manager.js",
     "./package.json": "./package.json"
   },
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "files": [
     "dist/**/*",
     "README.md",
@@ -44,7 +45,7 @@
     "eject-ts": "zx scripts/eject-typescript.js",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "pack": "npm pack --pack-destination pkg"
+    "pack": "npm run build && npm pack --pack-destination pkg"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -98,15 +99,13 @@
     ],
     "previewEntries": [
       "src/preview.ts"
-    ],
-    "nodeEntries": [
-      "src/preset.ts"
     ]
   },
   "storybook": {
     "displayName": "kadmos-pdf",
     "supportedFrameworks": [
-      "react"
+      "react",
+      "react-vite"
     ],
     "icon": "https://user-images.githubusercontent.com/321738/63501763-88dbf600-c4cc-11e9-96cd-94adadc2fd72.png"
   }

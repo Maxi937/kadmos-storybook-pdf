@@ -2,10 +2,10 @@ import React, { memo, useCallback, useEffect } from "react";
 import { useGlobals, type API } from "storybook/internal/manager-api";
 import { IconButton } from "storybook/internal/components";
 import { ADDON_ID, KEY, TOOL_ID } from "../constants";
-import { LightningIcon } from "@storybook/icons";
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 
 export const Tool = memo(function MyAddonSelector({ api }: { api: API }) {
+  console.log("registering kadmos pdf component")
   const [globals, updateGlobals, storyGlobals] = useGlobals();
 
   const isLocked = KEY in storyGlobals;

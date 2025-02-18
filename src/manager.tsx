@@ -1,7 +1,7 @@
 import React from "react";
 import { addons, types } from "storybook/internal/manager-api";
 import { Tool } from "./components/Tool";
-import { ADDON_ID, PANEL_ID, TAB_ID, TOOL_ID } from "./constants";
+import { ADDON_ID, TAB_ID, TOOL_ID } from "./constants";
 
 /**
  * Note: if you want to use JSX in this file, rename it to `manager.tsx`
